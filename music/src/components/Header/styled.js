@@ -9,8 +9,7 @@ export const HeaderWrapper = styled.div`
     display: flex;
     justify-content: space-between;
   }
-
-
+  
   .divider {
     height: 5px;
     background-color: #C20C0C;
@@ -101,6 +100,7 @@ export const HeaderRight = styled.div`
     border: 1px solid #666;
     border-radius: 16px;
     margin: 0 16px;
+    background-color: transparent;
   }
 `
 
