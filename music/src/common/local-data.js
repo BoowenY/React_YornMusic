@@ -80,7 +80,7 @@ export const headerLinks = [
     },
     {
       title: "主播电台",
-      link: "/discover/djradio"
+      link: "/discover/radio"
     },
     {
       title: "歌手",
