@@ -1,9 +1,9 @@
 import React, { memo } from 'react'
 
-export default memo(function YNDiscover() {
+export default memo(function YNRadio() {
     return (
         <div>
-            YNDiscover
+            YNRadio
         </div>
     )
 })
