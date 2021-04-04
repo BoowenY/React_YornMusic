@@ -14,10 +14,13 @@ instance.interceptors.response.use(
       switch (err.response.status) {
         case 400:
           console.log("error");
+          break;
         case 401:
           console.log("Authored");
+          break;
         default:
           console.log("Other Error");
+          break;
       }
     }
     return err;
