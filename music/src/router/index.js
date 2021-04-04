@@ -10,6 +10,7 @@ import YNRecommend from "../pages/Discover/c_pages/recommend";
 import YNRanking from "../pages/Discover/c_pages/ranking";
 import YNSongs from "../pages/Discover/c_pages/songs";
 import YNArtist from "../pages/Discover/c_pages/artist";
+import YNPlayer from "../pages/Player";
 const routes = [
   {
     path: "/",
@@ -48,6 +49,10 @@ const routes = [
       {
         path: "/discover/artist",
         component: YNArtist,
+      },
+      {
+        path: "/discover/player",
+        component: YNPlayer,
       },
     ],
   },
