@@ -1,10 +1,10 @@
 import React, { memo, useCallback, useState, useEffect, useRef } from "react";
 import { useSelector, useDispatch, shallowEqual } from "react-redux";
-import { BannerWrapper, BannerControl, BannerLeft, BannerRight } from "./style";
+import { BannerWrapper, BannerLeft } from "./style";
 import { getTopBannerAction } from "../../store/actionCreators";
 import { Carousel } from "antd";
 export default memo(function YNTopBanner() {
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0);
   const { topBanners } = useSelector(
     (state) => ({
       topBanners: state.getIn(["recommend", "topBanners"]),
@@ -18,13 +18,21 @@ export default memo(function YNTopBanner() {
   }, [dispatch]);
   const bannerChange = useCallback((from, to) => {
     setCurrentIndex(to);
-  }, [])
-  const bgImage = topBanners[currentIndex] && (topBanners[currentIndex].imageUrl+"?imageView&blur=40x20")
+  }, []);
+  const bgImage =
+    topBanners[currentIndex] &&
+    topBanners[currentIndex].imageUrl + "?imageView&blur=40x20";
   return (
     <BannerWrapper bgImage={bgImage}>
       <div className="banner wrap-v2">
         <BannerLeft>
-          <Carousel effect="fade" autoplay ref={bannerRef} beforeChange={bannerChange}>
+          <Carousel
+            effect="fade"
+            autoplay
+            ref={bannerRef}
+            beforeChange={bannerChange}
+            easing="linear"
+          >
             {topBanners.map((item, index) => (
               <div className="banner-item" key={item.imageUrl}>
                 <img
